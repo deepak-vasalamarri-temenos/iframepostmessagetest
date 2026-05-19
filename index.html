@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Iframe Sender Page</h2>
+
+<script>
+  setInterval(() => {
+    parent.postMessage(
+      {
+        type: "heartbeat",
+        timestamp: new Date().toISOString()
+      },
+      "*"
+    );
+  }, 2000);
+</script>
+
+</body>
+</html>
