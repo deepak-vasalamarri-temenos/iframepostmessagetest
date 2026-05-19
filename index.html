@@ -5,15 +5,16 @@
 <h2>Iframe Sender Page</h2>
 
 <script>
-  setInterval(() => {
+  setTimeout(() => {
     parent.postMessage(
       {
         type: "heartbeat",
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        verification_status: "verification.accepted"
       },
       "*"
     );
-  }, 2000);
+  }, 15000);
 </script>
 
 </body>
